@@ -2,14 +2,14 @@ import React from 'react';
 
 const Autocomplete = (props) => {
 	return (
-		<div class="Autocomplete">autocomplete...</div>
+		<div className="Autocomplete">autocomplete...</div>
 	)
 }
 
 const Search = (props) => {
 	return (
-		<div class="Search">
-			<div class="SearchBox">
+		<div className="Search">
+			<div className="SearchBox">
 				<input type="text"></input><input type="button"></input>
 			</div>
 			<Autocomplete />
@@ -19,7 +19,7 @@ const Search = (props) => {
 
 const Header = (props) => {
 	return (
-		<div class="Header">
+		<div className="Header">
 			<Search />
 		</div>
 	);
