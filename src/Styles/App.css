@@ -3,11 +3,10 @@ body {
 	font-size: 16px;
 
 	max-width: 30em;
-	width: 100vw;
+	width: calc(100vw - 1em);
+	height: calc(100vh - 1em);
 
 	padding: 0.5em;
-
-	height: 100vh;
 
 	margin-left: auto;
 	margin-right: auto;
@@ -28,7 +27,7 @@ input {
 div.Header,
 div.Main,
 div.Footer {
-	width: calc(100% - 1em);
+	width: 100%;
 }
 
 div.Header div.SearchBox > div {
@@ -59,7 +58,7 @@ div.Footer, div.Main {
 	margin-top: 0.5em;
 }
 
-div.User {
+div.Main {
 	height: calc(100vh - 1.5em - 1px - 1.5em - 2px - 1.5em - 2px - 1.5em - 2px - 0.5em - 4px);
 }
 
@@ -69,6 +68,10 @@ div.User > div.RemoveFunds {
 	font-size: 2em;
 }
 
+div.User {
+    margin-bottom: 1em;
+}
+
 div.User > div {
 	display: inline-block;	
 
@@ -76,7 +79,7 @@ div.User > div {
 
 div.User > div.UserName {
 	display: block;
-	margin-bottom: 0.5em;
+	margin-bottom: 1em;
 }
 
 div.User > div.AddFunds {
@@ -85,6 +88,35 @@ div.User > div.AddFunds {
 
 div.User > div.RemoveFunds {
 	margin-left: 0.5em;	
+}
+
+
+div.ItemMenu > div.Item {
+	background-color: hsla(225, 25%, 95%, 1);
+
+    width: 5em;
+    height: 5em;
+
+	padding: 0.5em;
+
+    margin-right: 0.5em;
+    margin-bottom: 0.5em;
+
+	border: 1px solid hsla(225, 25%, 85%, 1);
+	border-radius: 5px;
+
+    text-align: center;
+    vertical-align: middle;
+
+    display: inline-block;
+}
+
+div.ItemMenu > div.Item > span {
+    display: block;
+}
+
+div.ItemMenu > div.Item > span.name {
+    font-weight: bold;
 }
 
 
@@ -108,4 +140,14 @@ div.button {
 
 	border: 1px solid hsla(225, 25%, 85%, 1);
 	border-radius: 5px;
+}
+
+div.button:hover {
+    background-color: hsla(225, 25%, 90%, 1);
+    transition: 100ms;
+}
+
+div.button:active {
+    background-color: hsla(225, 25%, 80%, 1);
+    transition: 100ms;
 }
