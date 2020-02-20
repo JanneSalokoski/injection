@@ -7,10 +7,19 @@ const Autocomplete = (props) => {
 }
 
 const Search = (props) => {
+	function updateUser() {
+		let userObject = {
+			name: "Janne Salokoski",
+			saldo: 60.00
+		};
+
+		props.setUser(userObject);
+	}
+
 	return (
 		<div className="Search">
 			<div className="SearchBox">
-				<input type="text"></input><input type="button"></input>
+				<input type="text"></input><input type="button" value="Search" onClick={updateUser}></input>
 			</div>
 			<Autocomplete />
 		</div>
@@ -20,7 +29,7 @@ const Search = (props) => {
 const Header = (props) => {
 	return (
 		<div className="Header">
-			<Search />
+			<Search setUser={props.setUser}/>
 		</div>
 	);
 };

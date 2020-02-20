@@ -1,6 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Fira+Mono|Fira+Sans&display=swap');
+
 body {
-	font-family: Helvetica Neue;
+	font-family: Fira sans;
 	font-size: 16px;
+
+	color: hsla(225, 25%, 15%, 1);
 
 	max-width: 30em;
 	width: calc(100vw - 1em);
@@ -40,11 +44,21 @@ div.Header div.SearchBox > input[type="text"] {
 	border-bottom-right-radius: 0px;
 
 	width: calc(100% - 3em - 0.5em - 1px);
+	height: 1em;
+
+	padding: 0.25em;
 }
 
 div.Header div.SearchBox > input[type="button"] {
 	width: 3em;
+	height: calc(1.5em + 2px);
+
+	padding: 0.25em;
+	
 	background-color: hsla(225, 25%, 85%, 1);
+	border: 1px solid hsla(225, 25%, 85%, 1);
+
+	transform: translateY(1px);
 
 	border-top-left-radius: 0px;
 	border-bottom-left-radius: 0px;
@@ -90,8 +104,25 @@ div.User > div.RemoveFunds {
 	margin-left: 0.5em;	
 }
 
+div.ItemMenu > div {
+	display: inline-block;
+}
 
-div.ItemMenu > div.Item {
+div.ItemMenu div.LongPressHandler {
+	display: inline-block;
+}
+
+div.ItemMenu div.Item:hover {
+	background-color: hsla(225, 25%, 90%, 1);
+	transition: 100ms;
+}
+
+div.ItemMenu div.Item:active {
+	background-color: hsla(225, 25%, 85%, 1);
+	transition: 100ms;
+}
+
+div.ItemMenu div.Item {
 	background-color: hsla(225, 25%, 95%, 1);
 
     width: 5em;
@@ -109,13 +140,20 @@ div.ItemMenu > div.Item {
     vertical-align: middle;
 
     display: inline-block;
+
+	-webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
-div.ItemMenu > div.Item > span {
+div.ItemMenu div.Item > span {
     display: block;
 }
 
-div.ItemMenu > div.Item > span.name {
+div.ItemMenu div.Item > span.name {
     font-weight: bold;
 }
 
@@ -150,4 +188,113 @@ div.button:hover {
 div.button:active {
     background-color: hsla(225, 25%, 80%, 1);
     transition: 100ms;
+}
+
+div.curtain {
+	position: absolute;
+
+	top: 0px;
+	left: 0px;
+
+	height: 100vh;
+	width: 100vw;
+
+	background-color: hsla(225, 25%, 50%, 0.5);
+}
+
+div.contextmenu {
+	position: absolute;
+
+	/*top: calc((50vh - 2em - 1em) / 2);*/
+	top: calc(100vh / 2 + 5em);
+	left: 1em;
+
+	width: calc(100vw - 2em);
+	/*height: calc(50vh - 2em - 1em);*/
+	
+	background-color: hsla(225, 25%, 100%, 1);
+
+	border-radius: 5px;
+}
+
+div.contextmenu > div {
+	padding: 0.5em;
+}
+
+div.contextmenu > div.contextmenu_header {
+	background-color: hsla(225, 25%, 90%, 1);
+
+	font-weight: bold;
+	color: hsla(225, 25%, 30%, 1);
+
+	border-top-right-radius: 5px;
+	border-top-left-radius: 5px;
+}
+
+div.contextmenu > div.contextmenu_header > div {
+	display: inline-block;
+}
+
+div.contextmenu > div.contextmenu_header > div.title {
+	width: 100%;
+}
+
+div.contextmenu > div.contextmenu_header > div.close {
+	position: fixed;
+	right: 1.5em;
+
+	display: inline-box;
+}
+
+
+div.contextmenu > div.contextmenu_item {
+	padding-bottom: 0px;
+}
+
+div.contextmenu > div.contextmenu_item:hover {
+	background-color: hsla(225, 25%, 95%, 1);
+	transition: 100ms;
+}
+
+div.contextmenu > div.contextmenu_item:active {
+	background-color: hsla(225, 25%, 90%, 1);
+	transition: 100ms;
+}
+
+div.contextmenu > div.contextmenu_item:not(:last-child):after {
+	content: ".";
+	display: block;
+	height: 0.5em;
+	width: calc(100% - 1em);
+	margin: 0px auto;
+	text-indent: -9999px;
+	border-bottom: 1px solid hsla(225, 25%, 90%, 1);
+}
+
+div.contextmenu > div.contextmenu_item:last-child {
+	padding-bottom: 0.5em;
+}
+
+input[type=text] {   
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
+input {   
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
+.name {
+	font-weight: bold;
+}
+
+div.contextmenu > div.contextmenu_wrapper {
+	padding: 1em;
+}
+
+div.contextmenu input[type=button].save {
+	margin-left: 0.5em;
 }
